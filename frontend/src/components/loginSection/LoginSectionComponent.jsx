@@ -6,6 +6,7 @@ const LoginSectionComponent = () => {
     email: "",
     password: "",
   });
+  const [errorMsg, setErrorMsg] = useState('')
   //***** Deleted for form validation ****
   // const [validationMsg, setValidationMsg] = useState("");
 
@@ -21,7 +22,14 @@ const LoginSectionComponent = () => {
       return;
     }
 
-    loginUser(signInObj);
+    loginUser(signInObj)
+      .then(res => console.log(res))
+      .catch(err => {
+        console.log(err)
+        if (err) {
+          setErrorMsg('Something went wrong. Please try again.')
+        }
+      })
   };
 
   return (
