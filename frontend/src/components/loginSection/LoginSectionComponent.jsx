@@ -65,7 +65,7 @@ const LoginSectionComponent = () => {
             required
           />
           <button onClick={showAndHide} className="col-2  btn passBtn ">
-            {showHide === "password" ? "SHOW" : "HIDE"}
+            {showHide === "password" ? "SHOW" : "HIDE"} 
           </button>
         </div>
         <div className="forgot text-center">Forgot your password?</div>
