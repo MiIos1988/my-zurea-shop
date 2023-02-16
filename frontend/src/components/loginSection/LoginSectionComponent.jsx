@@ -8,6 +8,7 @@ const LoginSectionComponent = () => {
   });
   const [errorMsg, setErrorMsg] = useState("");
   const [showHide, setShowHide] = useState("password");
+  const [showInput, setShowInput] = useState(true);
   //***** Deleted for form validation ****
   // const [validationMsg, setValidationMsg] = useState("");
 
@@ -28,18 +29,29 @@ const LoginSectionComponent = () => {
     }
 
     loginUser(signInObj)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        if (res.status === 215) {
+          setShowInput(false);
+        } else {
+          setShowInput(true);
+        }
+      })
       .catch((err) => {
         console.log(err);
-        if (err) {
-          setErrorMsg("Something went wrong. Please try again.");
-        }
+        err && setErrorMsg("Something went wrong. Please try again.");
       });
   };
 
   return (
     <div className="loginSection">
       <form onSubmit={(e) => e.preventDefault()}>
+        <div className={`hideInput text-center ${showInput && "displayNone"} `}>
+          <input
+            type="text"
+            placeholder={errorMsg ? errorMsg : "Authentication failed."}
+          />
+        </div>
         <div className="emailBlock row">
           <label className="col-3 text-end me-3" htmlFor="inputEmail">
             Email
@@ -65,7 +77,7 @@ const LoginSectionComponent = () => {
             required
           />
           <button onClick={showAndHide} className="col-2  btn passBtn ">
-            {showHide === "password" ? "SHOW" : "HIDE"} 
+            {showHide === "password" ? "SHOW" : "HIDE"}
           </button>
         </div>
         <div className="forgot text-center">Forgot your password?</div>

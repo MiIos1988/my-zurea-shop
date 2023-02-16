@@ -33,6 +33,23 @@
     width: 70px;
     // font-size: 1rem;
   }
+  .hideInput {
+    width: 90%;
+    margin: 0 auto 1rem;
+
+    input {
+      width: 100%;
+      background-color: #f2dede;
+      &::placeholder {
+        color: #b09cca;
+      }
+    }
+  }
+
+  .displayNone{
+    display: none;
+  }
+
   .loginBtn {
     border-radius: 0;
   }
