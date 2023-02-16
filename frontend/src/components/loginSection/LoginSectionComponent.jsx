@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { loginUser } from "../../services/auth.service";
+import { loginUser, saveData } from "../../services/auth.service";
 
 const LoginSectionComponent = () => {
   const [signInObj, setSignInObj] = useState({
@@ -30,11 +30,12 @@ const LoginSectionComponent = () => {
 
     loginUser(signInObj)
       .then((res) => {
-        console.log(res);
         if (res.status === 215) {
           setShowInput(false);
         } else {
           setShowInput(true);
+          console.log(res.data);
+          saveData(res.data)
         }
       })
       .catch((err) => {
