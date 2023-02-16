@@ -1,0 +1,50 @@
+.navbarSection {
+  border: 1px solid #e5e5e5;
+  margin: 30px 50px;
+
+  .logoSection {
+    padding: 25px;
+    height: 100%;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      padding: 25px 16px;
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .navRight {
+    padding-right: 0;
+  }
+  .basketCart {
+    background-color: black;
+    height: 100%;
+
+    p {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      margin-left: 20px;
+    }
+  }
+
+  .basketImg {
+    width: 40px;
+    height: 40px;
+    background-image: url("../imgs/navbar/sprite.png");
+    background-position: -5px -653px;
+  }
+}
+
+.account {
+  width: 40px;
+  height: 40px;
+  background-image: url("../imgs/navbar/sprite.png");
+  background-position: -5px -754px;
+}
