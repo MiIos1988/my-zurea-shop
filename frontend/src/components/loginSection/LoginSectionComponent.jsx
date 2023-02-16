@@ -6,7 +6,8 @@ const LoginSectionComponent = () => {
     email: "",
     password: "",
   });
-  const [errorMsg, setErrorMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState("");
+  const [showHide, setShowHide] = useState("password");
   //***** Deleted for form validation ****
   // const [validationMsg, setValidationMsg] = useState("");
 
@@ -16,6 +17,10 @@ const LoginSectionComponent = () => {
     setSignInObj(copySingIn);
   };
 
+  const showAndHide = () => {
+    showHide === "password" ? setShowHide("text") : setShowHide("password");
+  };
+
   const onLoginSubmit = () => {
     //***** Deleted for form validation ****
     if (!signInObj.email && !signInObj.password) {
@@ -23,13 +28,13 @@ const LoginSectionComponent = () => {
     }
 
     loginUser(signInObj)
-      .then(res => console.log(res))
-      .catch(err => {
-        console.log(err)
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err);
         if (err) {
-          setErrorMsg('Something went wrong. Please try again.')
+          setErrorMsg("Something went wrong. Please try again.");
         }
-      })
+      });
   };
 
   return (
@@ -54,12 +59,14 @@ const LoginSectionComponent = () => {
           </label>
           <input
             className="col-6 inputPass "
-            type="password"
+            type={showHide}
             name="password"
             onChange={handleSignInObj}
             required
           />
-          <button className="col-2  btn passBtn ">SHOW</button>
+          <button onClick={showAndHide} className="col-2  btn passBtn ">
+            {showHide === "password" ? "SHOW" : "HIDE"}
+          </button>
         </div>
         <div className="forgot text-center">Forgot your password?</div>
         <div className="row justify-content-center">
