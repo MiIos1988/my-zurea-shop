@@ -1,0 +1,50 @@
+.dropdownMenu {
+    position: absolute;
+    top: 95px;
+    right: -50px;
+    background-color: white;
+
+
+
+
+    ul {
+        border: 1px solid #e5e5e5;
+        list-style: none;
+        width: 150px;
+        padding: 10px;
+
+        li {
+            padding: 0;
+            border-bottom: 1px solid #e5e5e5;
+            line-height: 35px;
+            font-weight: 500;
+            opacity: .5;
+
+
+
+            a {
+                color: black;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.inactive {
+    opacity: 0;
+}
+
+.active {
+    opacity: 1;
+    // transform: translateY(-20px);
+}
+

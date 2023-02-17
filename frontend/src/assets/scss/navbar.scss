@@ -2,6 +2,8 @@
   border: 1px solid #e5e5e5;
   margin: 30px 50px;
 
+
+
   .logoSection {
     padding: 25px;
     height: 100%;
@@ -58,9 +60,12 @@
 .accWrap {
   height: 100%;
   cursor: pointer;
+
 }
 
 .account {
+  border: none;
+  background-color: white;
   width: 40px;
   height: 40px;
   background-image: url("../imgs/navbar/sprite.png");
@@ -76,6 +81,7 @@
 .searchWrap {
   height: 100%;
   cursor: pointer;
+  position: relative;
 
   .search {
     width: 40px;

@@ -87,7 +87,7 @@ const LoginSectionComponent = () => {
             className="col-2  btn btn-dark loginBtn"
             onClick={onLoginSubmit}
           >
-            Sing In
+            Sign In
           </button>
         </div>
         <hr />
