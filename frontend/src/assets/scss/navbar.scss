@@ -5,12 +5,15 @@
   .logoSection {
     padding: 25px;
     height: 100%;
+    cursor: pointer;
   }
 
   ul {
     list-style: none;
+
     li {
       padding: 25px 16px;
+
       a {
         text-decoration: none;
         color: black;
@@ -19,12 +22,17 @@
       }
     }
   }
+
   .navRight {
     padding-right: 0;
   }
+
   .basketCart {
     background-color: black;
     height: 100%;
+    padding: 25px;
+    margin-right: 0;
+    cursor: pointer;
 
     p {
       color: white;
@@ -39,7 +47,17 @@
     height: 40px;
     background-image: url("../imgs/navbar/sprite.png");
     background-position: -5px -653px;
+    transition: all .5s;
+
+    &:hover {
+      background-position: -55px -653px;
+    }
   }
+}
+
+.accWrap {
+  height: 100%;
+  cursor: pointer;
 }
 
 .account {
@@ -47,4 +65,27 @@
   height: 40px;
   background-image: url("../imgs/navbar/sprite.png");
   background-position: -5px -754px;
+  transition: all .5s;
+
+  &:hover {
+    background-position: -55px -754px;
+
+  }
+}
+
+.searchWrap {
+  height: 100%;
+  cursor: pointer;
+
+  .search {
+    width: 40px;
+    height: 40px;
+    background-image: url("../imgs/navbar/sprite.png");
+    background-position: -5px -704px;
+    transition: all .5s;
+
+    &:hover {
+      background-position: -55px -704px;
+    }
+  }
 }
