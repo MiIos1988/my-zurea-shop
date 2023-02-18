@@ -12,8 +12,11 @@ const userSlicer = createSlice({
     saveUser(state, data) {
       state.user = data.payload;
     },
+    removeUser(state) {
+      state.user = null;
+    },
   },
 });
 
-export const { saveUser } = userSlicer.actions;
+export const { saveUser, removeUser } = userSlicer.actions;
 export default userSlicer.reducer;
