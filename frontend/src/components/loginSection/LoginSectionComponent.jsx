@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { saveUser } from "../../redux/userSlicer";
 import { loginUser, saveData } from "../../services/auth.service";
 
 const LoginSectionComponent = () => {
@@ -11,6 +14,8 @@ const LoginSectionComponent = () => {
   const [showInput, setShowInput] = useState(true);
   //***** Deleted for form validation ****
   // const [validationMsg, setValidationMsg] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignInObj = (e) => {
     let copySingIn = { ...signInObj };
@@ -34,8 +39,10 @@ const LoginSectionComponent = () => {
           setShowInput(false);
         } else {
           setShowInput(true);
-          console.log(res.data);
-          saveData(res.data)
+          // console.log(res.data);
+          saveData(res.data);
+          dispatch(saveUser(res.data));
+          navigate("/");
         }
       })
       .catch((err) => {

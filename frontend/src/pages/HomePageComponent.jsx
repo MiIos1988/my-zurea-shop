@@ -1,7 +1,12 @@
 import React from "react";
+import BasicInfoSectionComponent from "../components/basicInfoSection/BasicInfoSectionComponent";
 
 const HomePageComponent = () => {
-  return <div>Home page</div>;
+  return (
+    <>
+      <BasicInfoSectionComponent />
+    </>
+  );
 };
 
 export default HomePageComponent;
