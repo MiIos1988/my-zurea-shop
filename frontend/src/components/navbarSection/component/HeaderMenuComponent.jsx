@@ -1,4 +1,4 @@
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown } from "react-icons/io";
 import NavbarLinkComponent from "./NavbarLinkComponent";
 
 const HeaderMenuComponent = () => {
@@ -6,20 +6,28 @@ const HeaderMenuComponent = () => {
     <div className="headerMenu col-6 just">
       <ul className="d-flex justify-content-center">
         <li>
-          <NavbarLinkComponent title={'Home'} redirectUrl={"/"} />
+          <NavbarLinkComponent title={"Home"} redirectUrl={"/"} />
         </li>
         <li>
-          <NavbarLinkComponent title={'Shoes'} redirectUrl={"/"} icon={<IoIosArrowDown />} />
+          <NavbarLinkComponent
+            title={"Shop"}
+            redirectUrl={"/shop"}
+            icon={<IoIosArrowDown />}
+          />
         </li>
         <li>
-          <NavbarLinkComponent title={'Watch'} redirectUrl={"/"} />
+          <NavbarLinkComponent title={"Watch"} redirectUrl={"/"} />
         </li>
         <li>
-          <NavbarLinkComponent title={'More'} redirectUrl={"/"} icon={<IoIosArrowDown />} />
+          <NavbarLinkComponent
+            title={"More"}
+            redirectUrl={"/"}
+            icon={<IoIosArrowDown />}
+          />
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderMenuComponent
+export default HeaderMenuComponent;

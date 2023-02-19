@@ -1,6 +1,7 @@
 import LoginSectionComponent from "../components/loginSection/LoginSectionComponent";
 import HomePageComponent from "../pages/HomePageComponent";
 import App from "../App";
+import ShopPageComponent from "../pages/ShopPageComponent";
 
 const router = [
   {
@@ -14,6 +15,10 @@ const router = [
       {
         path: "/login",
         element: <LoginSectionComponent/>
+      },
+      {
+        path: "/shop",
+        element: <ShopPageComponent/>
       }
     ],
   },
