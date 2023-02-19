@@ -3,21 +3,24 @@ const app = express();
 const portNumber = 5050;
 const cors = require("cors");
 const authRoute = require("./routes/auth.route");
-const mongoose = require('mongoose');
+const productRoute = require("./routes/product.route");
+const mongoose = require("mongoose");
 const MONGO_DB_URL = require("./config/db.config");
 
-mongoose.set('strictQuery', false);
-mongoose.connect(MONGO_DB_URL)
-  .then(data => {
-    console.log("Mongo DB is connected")
+mongoose.set("strictQuery", false);
+mongoose
+  .connect(MONGO_DB_URL)
+  .then((data) => {
+    console.log("Mongo DB is connected");
   })
-  .catch(error => {
-    console.log("Error while connecting to Mongo DB")
-  })
+  .catch((error) => {
+    console.log("Error while connecting to Mongo DB");
+  });
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoute);
+app.use("/api/product", productRoute);
 
 app.listen(portNumber, (error) => {
   if (error) {
