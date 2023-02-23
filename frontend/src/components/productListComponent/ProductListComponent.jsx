@@ -19,7 +19,7 @@ const ProductListComponent = () => {
                 errorMsg && <p>{errorMsg}</p>
             }
             {
-                productList.length ?
+                productList?.length ?
                     productList.map((el, index) => {
                         return <ProductItem key={index} product={el} />
                     })
