@@ -5,6 +5,7 @@ const cors = require("cors");
 const authRoute = require("./routes/auth.route");
 const mongoose = require('mongoose');
 const MONGO_DB_URL = require("./config/db.config");
+const productRoute = require("./routes/product.route");
 
 mongoose.set('strictQuery', false);
 mongoose.connect(MONGO_DB_URL)
@@ -18,6 +19,7 @@ mongoose.connect(MONGO_DB_URL)
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoute);
+app.use("/api/product", productRoute);
 
 app.listen(portNumber, (error) => {
   if (error) {

@@ -9,7 +9,7 @@ const HeaderMenuComponent = () => {
           <NavbarLinkComponent title={'Home'} redirectUrl={"/"} />
         </li>
         <li>
-          <NavbarLinkComponent title={'Shoes'} redirectUrl={"/"} icon={<IoIosArrowDown />} />
+          <NavbarLinkComponent title={'Shop'} redirectUrl={"/shop"} icon={<IoIosArrowDown />} />
         </li>
         <li>
           <NavbarLinkComponent title={'Watch'} redirectUrl={"/"} />
