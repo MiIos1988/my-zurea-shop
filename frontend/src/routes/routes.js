@@ -19,6 +19,10 @@ const router = [
       {
         path: "/shop",
         element: <ShopPageComponent/>
+      },
+      {
+        path: "/shop/:searchParams",
+        element: <ShopPageComponent/>
       }
     ],
   },

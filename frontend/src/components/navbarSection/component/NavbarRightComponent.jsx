@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import DropdownUserComponent from "../dropdowns/dropdownUser/DropdownUserComponent";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import SearchComponent from "./SearchComponent";
 
 const NavbarRightComponent = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ const NavbarRightComponent = () => {
   return (
     <div className="navRight col-3 d-flex justify-content-end">
       <div className="searchWrap d-flex align-items-center me-1">
-        <div className="search"></div>
+        <SearchComponent />
         {open && <DropdownUserComponent />}
       </div>
 
