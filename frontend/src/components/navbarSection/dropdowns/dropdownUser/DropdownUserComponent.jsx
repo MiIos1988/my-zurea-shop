@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
-const DropdownUserComponent = ({ open }) => {
+const DropdownUserComponent = () => {
     return (
-        <div className={`dropdownMenu ${open ? 'active' : 'inactive'}`}>
+        <div >
             <ul>
                 <li><Link className="linkDrop"> Wishlist (0)</Link></li>
                 <li><Link> Compare (0) </Link></li>
