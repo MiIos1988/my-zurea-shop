@@ -1,3 +1,4 @@
 import axios from "axios";
 
-export const getAllProducts = () => axios.get("/product/get-all");
+export const getAllProducts = (search) => axios.get(`/product/get-all${search ? '?search=' + search : ''}`);
+

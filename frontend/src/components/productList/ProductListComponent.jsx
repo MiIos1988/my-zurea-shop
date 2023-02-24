@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams, useSearchParams } from "react-router-dom"
 import { getAllProducts } from "../../services/product.services";
 import ProductListItemComponent from "./component/ProductListItemComponent";
 
 const ProductListComponent = () => {
   const [productList, setProductList] = useState([]);
   const [errorMsg, setErrorMsg] = useState();
+  const [search, setSearch] = useState('');
 
-  const params = useParams();
+  const [searchParams] = useSearchParams();
 
-  useEffect((params) => {
-    console.log(params)
-  }, [params]
+  useEffect(() => {
+    console.log(searchParams.get("search"))
+    setSearch(searchParams.get("search"))
+  }, [searchParams]
   )
 
   useEffect(() => {
-    getAllProducts()
+    getAllProducts(search)
       .then((result) => {
         setProductList(result.data);
       })
       .catch((err) => {
         setErrorMsg(err.message);
       });
-  }, []);
+  }, [searchParams]);
 
   const renderProductListView = () => {
     return productList.map((el, index) => {

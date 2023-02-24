@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom"
 
 const SearchComponent = () => {
     const [showSearchInput, setShowSearchInput] = useState(false)
     const [searchValue, setSearchValue] = useState("")
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        console.log(searchValue)
-    }, [searchValue]
-    )
+    // useEffect(() => {
+    //     console.log(searchValue)
+    // }, [searchValue]
+    // )
 
     const onSearch = () => {
-        console.log("work")
+        // console.log(searchValue)
+        searchValue && navigate("/shop?search=" + searchValue)
     }
 
 
