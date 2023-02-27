@@ -1,4 +1,4 @@
 import axios from "axios";
 
-export const getAllProducts = (search) => axios.get(`/product/get-all${search ? '?search=' + search : ''}`);
+export const getAllProducts = (page, elPerPage) => axios.get(`/product/get-all/${page}/${elPerPage}`);
 
