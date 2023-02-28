@@ -41,8 +41,13 @@ const LoginSectionComponent = () => {
           setShowInput(true);
           // console.log(res.data);
           saveData(res.data);
-          dispatch(saveUser(res.data));
-          navigate("/");
+          dispatch(saveUser(res.data.isAdmin));
+          console.log(res.data.isAdmin === "true")
+          if (res.data.isAdmin === "true") {
+            navigate("/dashboard")
+          } else {
+            navigate("/");
+          }
         }
       })
       .catch((err) => {

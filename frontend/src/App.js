@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem("ZU")) {
-      console.log(localStorage.getItem("ZU"));
       dispatch(saveUser(JSON.parse(localStorage.getItem("ZU"))));
     }
   }, []);

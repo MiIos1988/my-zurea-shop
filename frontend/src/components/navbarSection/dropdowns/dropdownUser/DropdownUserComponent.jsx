@@ -9,7 +9,6 @@ const DropdownUserComponent = () => {
   const userStore = useSelector((state) => state.userStore.user);
 
   useEffect(() => {
-    console.log(userStore);
   }, [userStore]);
 
   const onLogOut = () => {
