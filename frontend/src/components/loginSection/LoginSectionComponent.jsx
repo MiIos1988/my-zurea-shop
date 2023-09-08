@@ -12,8 +12,6 @@ const LoginSectionComponent = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [showHide, setShowHide] = useState("password");
   const [showInput, setShowInput] = useState(true);
-  //***** Deleted for form validation ****
-  // const [validationMsg, setValidationMsg] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -28,7 +26,6 @@ const LoginSectionComponent = () => {
   };
 
   const onLoginSubmit = () => {
-    //***** Deleted for form validation ****
     if (!signInObj.email && !signInObj.password) {
       return;
     }
@@ -39,7 +36,6 @@ const LoginSectionComponent = () => {
           setShowInput(false);
         } else {
           setShowInput(true);
-          // console.log(res.data);
           saveData(res.data);
           dispatch(saveUser(res.data));
           navigate("/");
